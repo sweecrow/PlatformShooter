@@ -14,10 +14,14 @@ public class PlayerMotor : MonoBehaviour {
 
     public bool isGrounded;
 
+    private Animator anim;
+
     void Start ()
     {
 
         rigidbody2d = GetComponent<Rigidbody2D>();
+
+        anim = GetComponent<Animator>();
     }
 
 	void Update ()
@@ -50,5 +54,8 @@ public class PlayerMotor : MonoBehaviour {
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
+
+        anim.SetFloat("Speed", Mathf.Abs(rigidbody2d.velocity.x));
+        anim.SetBool("Grounded", isGrounded);
     }
 }
