@@ -1,7 +1,7 @@
 # PlatformShooter
 Jag tänkte göra ett platfrom shooter game. Det är ett 2D spel där du är en karaktär som kan röra dig fram och tillbaka med piltangenterna och sedan hoppa med space. Du kan hoppa upp på olika platformar för att ta skydd från fiender och skjuta dem med muspekaren. Det ska vara ett spel där det finns en  eller flera spawn points för fiender. Som spawnar i olika wawes. Målet är att klara så många waves som möjligt utan att dö.
 
-##Planerning
+## Planerning
 01. Skapa pixelart för spelaren, projektil, mark, väggar, taket och en fiende. Skapat i photoshop.
 02. Lägg till pixelart, samt slica upp png filen till alla olika sprites.
 03. Lägg till mark, väggar och tak i scenen för att skapa själva spelplanen. Även platformar att hoppa på.
