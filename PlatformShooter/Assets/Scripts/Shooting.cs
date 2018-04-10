@@ -3,13 +3,21 @@ using System.Collections;
 
 public class Shooting : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public GameObject shotPrefab;
+
+    public GameObject exit_Point;
+
+    private Rigidbody2D rb;
+
+    public float speed;
+
+    void Start ()
+    {
 
 	}
 
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
 }
