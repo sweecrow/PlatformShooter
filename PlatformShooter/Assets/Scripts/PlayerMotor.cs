@@ -45,7 +45,7 @@ public class PlayerMotor : MonoBehaviour {
         {
             rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
         }
-
+/*
         if (rigidbody2d.velocity.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
@@ -54,7 +54,7 @@ public class PlayerMotor : MonoBehaviour {
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-
+*/
         anim.SetFloat("Speed", Mathf.Abs(rigidbody2d.velocity.x));
         anim.SetBool("Grounded", isGrounded);
     }
