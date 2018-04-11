@@ -2666,7 +2666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 1474761519}
   exit_Point: {fileID: 892246404}
-  speed: 100
+  speed: 1000
 --- !u!212 &892246407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4695,6 +4695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474761521}
   - component: {fileID: 1474761520}
+  - component: {fileID: 1474761522}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -4757,6 +4758,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1474761522
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474761519}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1475749910
 GameObject:
   m_ObjectHideFlags: 0

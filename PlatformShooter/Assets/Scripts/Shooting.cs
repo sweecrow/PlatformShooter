@@ -20,5 +20,12 @@ public class Shooting : MonoBehaviour {
 
         Quaternion rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         transform.rotation = rotation;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject shot = (GameObject)Instantiate(shotPrefab, exitPoint, rotation);
+            rb = shot.GetComponent<Rigidbody2D>();
+            rb.AddForce(direction * speed);
+        }
     }
 }
