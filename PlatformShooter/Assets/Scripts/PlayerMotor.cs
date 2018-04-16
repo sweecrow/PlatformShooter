@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerMotor : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class PlayerMotor : MonoBehaviour {
 
     public int healthMax = 100;
     public int healthCurrent;
+
+    public Text healthText;
 
     private Rigidbody2D rigidbody2d;
 
@@ -34,6 +37,8 @@ public class PlayerMotor : MonoBehaviour {
 
 	void Update ()
     {
+        healthText.text = "Health: " + healthCurrent.ToString();
+
         if (healthCurrent <= 0)
         {
             Destroy(gameObject);
