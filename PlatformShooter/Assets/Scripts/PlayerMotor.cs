@@ -6,6 +6,9 @@ public class PlayerMotor : MonoBehaviour {
     public float moveSpeed;
     public float jumpForce;
 
+    public int healthMax = 100;
+    public int healthCurrent;
+
     private Rigidbody2D rigidbody2d;
 
     public Transform groundCheckPoint;
@@ -15,6 +18,11 @@ public class PlayerMotor : MonoBehaviour {
     public bool isGrounded;
 
     private Animator anim;
+
+    void Awake()
+    {
+        healthCurrent = healthMax;
+    }
 
     void Start ()
     {
@@ -26,6 +34,11 @@ public class PlayerMotor : MonoBehaviour {
 
 	void Update ()
     {
+        if (healthCurrent <= 0)
+        {
+            Destroy(gameObject);
+        }
+
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, GroundCheckRadius, whatIsGround);
 
         if (Input.GetKey(KeyCode.A))
@@ -57,5 +70,10 @@ public class PlayerMotor : MonoBehaviour {
 */
         anim.SetFloat("Speed", Mathf.Abs(rigidbody2d.velocity.x));
         anim.SetBool("Grounded", isGrounded);
+    }
+
+    public void TakeDamage()
+    {
+        healthCurrent -= 10;
     }
 }
