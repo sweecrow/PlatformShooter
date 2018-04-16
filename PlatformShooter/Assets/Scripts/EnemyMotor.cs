@@ -24,4 +24,13 @@ public class EnemyMotor : MonoBehaviour {
     {
         healthCurrent -= 10;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player1")
+        {
+            Debug.Log("hit");
+            FindObjectOfType<PlayerMotor>().TakeDamage();
+        }
+    }
 }
