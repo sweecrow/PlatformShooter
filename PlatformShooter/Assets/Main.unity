@@ -2666,7 +2666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 1253212047984556, guid: f9b54f02ef13c6f4198b1d5eb33dc0be, type: 2}
   exit_Point: {fileID: 1765625470}
-  speed: 2000
+  speed: 1500
 --- !u!212 &892246407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3516,6 +3516,7 @@ GameObject:
   - component: {fileID: 1111358703}
   - component: {fileID: 1111358702}
   - component: {fileID: 1111358706}
+  - component: {fileID: 1111358707}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy1
@@ -3635,7 +3636,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1249238502}
-  EnemySpeed: 3
+  EnemySpeed: 1
+--- !u!114 &1111358707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1111358701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366a0ed965826c048b71024c341afe9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 30
+  healthCurrent: 0
 --- !u!1 &1129288227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4082,6 +4096,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   jumpForce: 18
+  healthMax: 100
+  healthCurrent: 0
   groundCheckPoint: {fileID: 1083262989}
   GroundCheckRadius: 0.2
   whatIsGround:
