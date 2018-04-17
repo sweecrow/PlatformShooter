@@ -5567,6 +5567,34 @@ MonoBehaviour:
     enemy: {fileID: 4368011447266696, guid: 11815bb62cf06d749a0342bd196d9cf7, type: 2}
     count: 3
     rate: 1
+  - name: wave4
+    enemy: {fileID: 4368011447266696, guid: 11815bb62cf06d749a0342bd196d9cf7, type: 2}
+    count: 3
+    rate: 2
+  - name: wave5
+    enemy: {fileID: 4368011447266696, guid: 11815bb62cf06d749a0342bd196d9cf7, type: 2}
+    count: 4
+    rate: 1
+  - name: wave6
+    enemy: {fileID: 4368011447266696, guid: 11815bb62cf06d749a0342bd196d9cf7, type: 2}
+    count: 4
+    rate: 2
+  - name: wave7
+    enemy: {fileID: 4368011447266696, guid: 11815bb62cf06d749a0342bd196d9cf7, type: 2}
+    count: 5
+    rate: 2
+  - name: wave8
+    enemy: {fileID: 4368011447266696, guid: 11815bb62cf06d749a0342bd196d9cf7, type: 2}
+    count: 6
+    rate: 1
+  - name: wave9
+    enemy: {fileID: 4368011447266696, guid: 11815bb62cf06d749a0342bd196d9cf7, type: 2}
+    count: 6
+    rate: 3
+  - name: wave10
+    enemy: {fileID: 4368011447266696, guid: 11815bb62cf06d749a0342bd196d9cf7, type: 2}
+    count: 7
+    rate: 2
   spawnPoints:
   - {fileID: 939089077}
   - {fileID: 1300399662}

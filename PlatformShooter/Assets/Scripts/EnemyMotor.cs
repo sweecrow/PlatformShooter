@@ -16,6 +16,7 @@ public class EnemyMotor : MonoBehaviour {
         if (healthCurrent <= 0)
         {
             Destroy(gameObject);
+            
         }
 
     }
