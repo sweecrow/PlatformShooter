@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour {
+
+    public Text WaveText;
+
+    public int waveCounter = 1;
 
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
@@ -50,6 +55,8 @@ public class WaveSpawner : MonoBehaviour {
 
     void Update()
     {
+        WaveText.text = "Wave: " + waveCounter.ToString();
+
         if (state == SpawnState.WAITING)
         {
             if (!EnemyIsAlive())
@@ -90,6 +97,7 @@ public class WaveSpawner : MonoBehaviour {
         else
         {
             nextWave++;
+            waveCounter++;
         }
     }
 
