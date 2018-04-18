@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  EnemySpeed: 3
+  EnemySpeed: 5
 --- !u!114 &114950610779305772
 MonoBehaviour:
   m_ObjectHideFlags: 1

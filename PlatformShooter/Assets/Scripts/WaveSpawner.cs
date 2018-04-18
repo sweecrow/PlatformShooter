@@ -6,7 +6,9 @@ public class WaveSpawner : MonoBehaviour {
 
     public Text WaveText;
 
-    public int waveCounter = 1;
+    private int waveCounter = 1;
+
+    public Text HighScore;
 
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
@@ -45,6 +47,8 @@ public class WaveSpawner : MonoBehaviour {
 
     void Start()
     {
+        HighScore.text = "HighScore: " + PlayerPrefs.GetInt("HighScore", 1).ToString();
+
         if (spawnPoints.Length == 0)
         {
             Debug.LogError("No spawn points referenced.");
@@ -84,6 +88,13 @@ public class WaveSpawner : MonoBehaviour {
 
     void WaveCompleted()
     {
+        if(waveCounter > PlayerPrefs.GetInt("HighScore", 1))
+        {
+            PlayerPrefs.SetInt("HighScore", waveCounter);
+            HighScore.text = "HighScore: "+ waveCounter.ToString();
+        }
+        
+
         Debug.Log("Wave Completed!");
 
         state = SpawnState.COUNTING;
@@ -137,5 +148,11 @@ public class WaveSpawner : MonoBehaviour {
 
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Instantiate(_enemy, _sp.position, _sp.rotation);
+    }
+
+    public void Reset()
+    {
+        PlayerPrefs.DeleteAll();
+        HighScore.text = "HighScore: 1";
     }
 }
