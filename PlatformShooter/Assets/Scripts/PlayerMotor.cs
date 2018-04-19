@@ -10,6 +10,9 @@ public class PlayerMotor : MonoBehaviour {
     public int healthMax = 100;
     public int healthCurrent;
 
+    public bool isRegenHealthTrue;
+    public int healthReg;
+
     public Text healthText;
 
     private Rigidbody2D rigidbody2d;
@@ -75,6 +78,22 @@ public class PlayerMotor : MonoBehaviour {
 */
         anim.SetFloat("Speed", Mathf.Abs(rigidbody2d.velocity.x));
         anim.SetBool("Grounded", isGrounded);
+
+        if (healthCurrent != healthMax && !isRegenHealthTrue)
+        {
+            StartCoroutine(RegainHealth());
+        }
+    }
+
+    private IEnumerator RegainHealth()
+    {
+        isRegenHealthTrue = true;
+        while (healthCurrent < healthMax)
+        {
+            healthCurrent += healthReg;
+            yield return new WaitForSeconds(0.5f);
+        }
+        isRegenHealthTrue = false;
     }
 
     public void TakeDamage()

@@ -4225,6 +4225,8 @@ MonoBehaviour:
   jumpForce: 18
   healthMax: 100
   healthCurrent: 0
+  isRegenHealthTrue: 0
+  healthReg: 1
   healthText: {fileID: 1899513148}
   groundCheckPoint: {fileID: 1083262989}
   GroundCheckRadius: 0.2
