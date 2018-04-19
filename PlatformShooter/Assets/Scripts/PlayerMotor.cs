@@ -10,6 +10,9 @@ public class PlayerMotor : MonoBehaviour {
     public int healthMax = 100;
     public int healthCurrent;
 
+    public Image currentHealthBar;
+    public Text ratiotext;
+
     public bool isRegenHealthTrue;
     public int healthReg;
 
@@ -25,6 +28,13 @@ public class PlayerMotor : MonoBehaviour {
 
     private Animator anim;
 
+    public void UpdateHealthBar()
+    {
+        float ratio = healthCurrent / healthMax;
+        currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
+        ratiotext.text = (ratio * 100).ToString() + "%";
+    }
+
     void Awake()
     {
         healthCurrent = healthMax;
@@ -32,6 +42,7 @@ public class PlayerMotor : MonoBehaviour {
 
     void Start ()
     {
+        UpdateHealthBar();
 
         rigidbody2d = GetComponent<Rigidbody2D>();
 
@@ -66,16 +77,7 @@ public class PlayerMotor : MonoBehaviour {
         {
             rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
         }
-/*
-        if (rigidbody2d.velocity.x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else if (rigidbody2d.velocity.x > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-*/
+
         anim.SetFloat("Speed", Mathf.Abs(rigidbody2d.velocity.x));
         anim.SetBool("Grounded", isGrounded);
 
@@ -91,6 +93,7 @@ public class PlayerMotor : MonoBehaviour {
         while (healthCurrent < healthMax)
         {
             healthCurrent += healthReg;
+            UpdateHealthBar();
             yield return new WaitForSeconds(0.5f);
         }
         isRegenHealthTrue = false;
@@ -99,5 +102,6 @@ public class PlayerMotor : MonoBehaviour {
     public void TakeDamage()
     {
         healthCurrent -= 10;
+        UpdateHealthBar();
     }
 }
