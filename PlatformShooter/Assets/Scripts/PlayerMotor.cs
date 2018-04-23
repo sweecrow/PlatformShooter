@@ -7,11 +7,12 @@ public class PlayerMotor : MonoBehaviour {
     public float moveSpeed;
     public float jumpForce;
 
-    public int healthMax = 100;
-    public int healthCurrent;
+    public float healthMax = 100;
+    public float healthCurrent;
 
     public Image currentHealthBar;
     public Text ratiotext;
+    public float ratio;
 
     public bool isRegenHealthTrue;
     public int healthReg;
@@ -30,7 +31,7 @@ public class PlayerMotor : MonoBehaviour {
 
     public void UpdateHealthBar()
     {
-        float ratio = healthCurrent / healthMax;
+        ratio = healthCurrent / healthMax;
         currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
         ratiotext.text = (ratio * 100).ToString() + "%";
     }
