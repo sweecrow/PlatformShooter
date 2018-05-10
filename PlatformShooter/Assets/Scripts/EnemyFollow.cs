@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using UnityEngine.Networking;
 
-public class EnemyFollow : MonoBehaviour {
+public class EnemyFollow : NetworkBehaviour
+{
 
     public GameObject target;
     public float EnemySpeed;

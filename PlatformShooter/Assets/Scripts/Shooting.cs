@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class Shooting : MonoBehaviour {
+public class Shooting : NetworkBehaviour
+{
 
     public GameObject shotPrefab;
 

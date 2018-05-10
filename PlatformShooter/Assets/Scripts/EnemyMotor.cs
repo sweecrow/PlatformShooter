@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class EnemyMotor : MonoBehaviour {
+public class EnemyMotor : NetworkBehaviour
+{
 
     public int healthMax = 30;
     public int healthCurrent;

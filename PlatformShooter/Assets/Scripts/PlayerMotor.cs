@@ -1,32 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class PlayerMotor : MonoBehaviour {
-
+public class PlayerMotor : NetworkBehaviour
+{
+    
     public float moveSpeed;
+    
     public float jumpForce;
-
+    
     public float healthMax = 100;
+   
     public float healthCurrent;
-
+    
     public Image currentHealthBar;
+    
     public Text ratiotext;
+    
     public float ratio;
-
+  
     public bool isRegenHealthTrue;
+    
     public int healthReg;
-
+   
     public Text healthText;
-
+ 
     private Rigidbody2D rigidbody2d;
 
     public Transform groundCheckPoint;
+
     public float GroundCheckRadius;
+
     public LayerMask whatIsGround;
 
     public bool isGrounded;
-
+ 
     private Animator anim;
 
     public void UpdateHealthBar()
@@ -52,11 +61,10 @@ public class PlayerMotor : MonoBehaviour {
 
 	void Update ()
     {
-        healthText.text = "Health: " + healthCurrent.ToString();
-
-        if (healthCurrent <= 0)
+        if (!isLocalPlayer)
         {
-            Destroy(gameObject);
+            
+            return;
         }
 
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, GroundCheckRadius, whatIsGround);
@@ -79,12 +87,20 @@ public class PlayerMotor : MonoBehaviour {
             rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
         }
 
+
         anim.SetFloat("Speed", Mathf.Abs(rigidbody2d.velocity.x));
         anim.SetBool("Grounded", isGrounded);
 
         if (healthCurrent != healthMax && !isRegenHealthTrue)
         {
             StartCoroutine(RegainHealth());
+        }
+
+        healthText.text = "Health: " + healthCurrent.ToString();
+
+        if (healthCurrent <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
