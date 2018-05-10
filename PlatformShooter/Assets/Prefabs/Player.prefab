@@ -72,7 +72,8 @@ GameObject:
   - component: {fileID: 61093400221738614}
   - component: {fileID: 114404109806643360}
   - component: {fileID: 95987737168011514}
-  - component: {fileID: 114222962022226922}
+  - component: {fileID: 114783701544075374}
+  - component: {fileID: 114796637616133316}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player1
@@ -197,7 +198,34 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114222962022226922
+--- !u!114 &114404109806643360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1806630197762938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8bf670de6e1d5742be5f1f44e371d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 8
+  jumpForce: 18
+  healthMax: 100
+  healthCurrent: 0
+  currentHealthBar: {fileID: 0}
+  ratiotext: {fileID: 0}
+  ratio: 0
+  isRegenHealthTrue: 0
+  healthReg: 1
+  healthText: {fileID: 0}
+  groundCheckPoint: {fileID: 4845713783412340}
+  GroundCheckRadius: 0.2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 1
+  isGrounded: 0
+--- !u!114 &114783701544075374
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -229,7 +257,7 @@ MonoBehaviour:
     i15: 164
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114404109806643360
+--- !u!114 &114796637616133316
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -237,25 +265,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1806630197762938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8bf670de6e1d5742be5f1f44e371d49, type: 3}
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  jumpForce: 18
-  healthMax: 100
-  healthCurrent: 0
-  currentHealthBar: {fileID: 0}
-  ratiotext: {fileID: 0}
-  ratio: 0
-  isRegenHealthTrue: 0
-  healthReg: 1
-  healthText: {fileID: 0}
-  groundCheckPoint: {fileID: 4845713783412340}
-  GroundCheckRadius: 0.2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1
-  isGrounded: 0
+  m_TransformSyncMode: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 3
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114846506225054388
 MonoBehaviour:
   m_ObjectHideFlags: 1
