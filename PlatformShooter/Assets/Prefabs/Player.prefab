@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  jumpForce: 18
+  jumpForce: 200
   healthMax: 100
   healthCurrent: 0
   currentHealthBar: {fileID: 0}

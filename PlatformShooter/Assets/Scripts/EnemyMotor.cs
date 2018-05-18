@@ -27,7 +27,7 @@ public class EnemyMotor : NetworkBehaviour
     {
         healthCurrent -= 10;
     }
-
+    /*
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player1")
@@ -36,4 +36,5 @@ public class EnemyMotor : NetworkBehaviour
             FindObjectOfType<PlayerMotor>().TakeDamage();
         }
     }
+    */
 }

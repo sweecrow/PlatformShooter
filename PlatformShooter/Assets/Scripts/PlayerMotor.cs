@@ -25,7 +25,7 @@ public class PlayerMotor : NetworkBehaviour
     public bool isGrounded;
  
     private Animator anim;
-
+    
     public void UpdateHealthBar()
     {
         ratio = healthCurrent / healthMax;
@@ -53,16 +53,25 @@ public class PlayerMotor : NetworkBehaviour
         {
             if(Input.GetKey(KeyCode.D))
             {
-                this.transform.Translate(Vector2.right * Time.deltaTime * 3f);
+                this.transform.Translate(Vector2.right * Time.deltaTime * moveSpeed);
             }
             else if (Input.GetKey(KeyCode.A))
             {
-                this.transform.Translate(Vector2.left * Time.deltaTime * 3f);
+                this.transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
             }
 
-
-            /*
             isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, GroundCheckRadius, whatIsGround);
+
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            {
+                this.transform.Translate(Vector2.up * Time.deltaTime * jumpForce);
+                //rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
+            }
+
+            anim.SetFloat("Speed", Mathf.Abs(rigidbody2d.velocity.x));
+            anim.SetBool("Grounded", isGrounded);
+            /*
+            
             
             if (Input.GetKey(KeyCode.A))
             {
@@ -77,6 +86,8 @@ public class PlayerMotor : NetworkBehaviour
                 rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
             }
 
+            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, GroundCheckRadius, whatIsGround);
+
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
@@ -87,9 +98,9 @@ public class PlayerMotor : NetworkBehaviour
             */
         }
 
-        
 
-        
+
+
         /*
         if (healthCurrent != healthMax && !isRegenHealthTrue)
         {
@@ -102,8 +113,9 @@ public class PlayerMotor : NetworkBehaviour
         {
             Destroy(gameObject);
         }
+        */
     }
-
+    /*
     private IEnumerator RegainHealth()
     {
         isRegenHealthTrue = true;
