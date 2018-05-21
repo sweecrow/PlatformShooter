@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
-using UnityEngine.Networking;
 
-public class EnemyFollow : NetworkBehaviour
+
+public class EnemyFollow : MonoBehaviour
 {
 
     public GameObject target;

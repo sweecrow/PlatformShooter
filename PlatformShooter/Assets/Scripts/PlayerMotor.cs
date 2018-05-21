@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.Networking;
 
-public class PlayerMotor : NetworkBehaviour
+public class PlayerMotor : MonoBehaviour
 {
     
     public float moveSpeed;
@@ -49,30 +48,7 @@ public class PlayerMotor : NetworkBehaviour
 
 	void Update ()
     {
-        if (isLocalPlayer == true)
-        {
-            if(Input.GetKey(KeyCode.D))
-            {
-                this.transform.Translate(Vector2.right * Time.deltaTime * moveSpeed);
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                this.transform.Translate(Vector2.left * Time.deltaTime * moveSpeed);
-            }
 
-            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, GroundCheckRadius, whatIsGround);
-
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-            {
-                this.transform.Translate(Vector2.up * Time.deltaTime * jumpForce);
-                //rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpForce);
-            }
-
-            anim.SetFloat("Speed", Mathf.Abs(rigidbody2d.velocity.x));
-            anim.SetBool("Grounded", isGrounded);
-            /*
-            
-            
             if (Input.GetKey(KeyCode.A))
             {
                 rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
@@ -95,13 +71,7 @@ public class PlayerMotor : NetworkBehaviour
             
             anim.SetFloat("Speed", Mathf.Abs(rigidbody2d.velocity.x));
             anim.SetBool("Grounded", isGrounded);
-            */
-        }
-
-
-
-
-        /*
+            
         if (healthCurrent != healthMax && !isRegenHealthTrue)
         {
             StartCoroutine(RegainHealth());
@@ -113,9 +83,9 @@ public class PlayerMotor : NetworkBehaviour
         {
             Destroy(gameObject);
         }
-        */
+        
     }
-    /*
+    
     private IEnumerator RegainHealth()
     {
         isRegenHealthTrue = true;
@@ -133,5 +103,5 @@ public class PlayerMotor : NetworkBehaviour
         healthCurrent -= 10;
         UpdateHealthBar();
     }
-    */
+    
 }

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.Networking;
 
-public class WaveSpawner : NetworkBehaviour
+
+public class WaveSpawner : MonoBehaviour
 {
 
     public Text WaveText;
