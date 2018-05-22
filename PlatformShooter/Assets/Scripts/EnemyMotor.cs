@@ -22,9 +22,9 @@ public class EnemyMotor : MonoBehaviour
     {
         if (healthCurrent <= 0)
         {
-            powerUpNumer = Random.Range(1, 10);
+            powerUpNumer = Random.Range(1, 15);
 
-            if(powerUpNumer < 3 || powerUpNumer > 8)
+            if(powerUpNumer < 1 || powerUpNumer > 14)
             {
                 Instantiate(powerUpPrefab, transform.position + (transform.forward * 2), transform.rotation);
             }
