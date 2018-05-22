@@ -24,7 +24,7 @@ public class EnemyMotor : MonoBehaviour
         {
             powerUpNumer = Random.Range(1, 15);
 
-            if(powerUpNumer < 1 || powerUpNumer > 14)
+            if(powerUpNumer < 2 || powerUpNumer > 13)
             {
                 Instantiate(powerUpPrefab, transform.position + (transform.forward * 2), transform.rotation);
             }
