@@ -103,5 +103,21 @@ public class PlayerMotor : MonoBehaviour
         healthCurrent -= 10;
         UpdateHealthBar();
     }
-    
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.transform.tag == "Platform")
+        {
+            transform.parent = other.transform;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.transform.tag == "Platform")
+        {
+            transform.parent = null;
+        }
+    }
+
 }
