@@ -8,6 +8,11 @@ public class EnemyMotor : MonoBehaviour
     public int healthMax = 30;
     public int healthCurrent;
 
+    private Rigidbody2D rigidbody2d;
+
+    public GameObject powerUpPrefab;
+    public int powerUpNumer;
+
     void Awake()
     {
         healthCurrent = healthMax;
@@ -17,8 +22,15 @@ public class EnemyMotor : MonoBehaviour
     {
         if (healthCurrent <= 0)
         {
+            powerUpNumer = Random.Range(1, 10);
+
+            if(powerUpNumer < 3 || powerUpNumer > 8)
+            {
+                Instantiate(powerUpPrefab, transform.position + (transform.forward * 2), transform.rotation);
+            }
+
             Destroy(gameObject);
-            
+
         }
 
     }

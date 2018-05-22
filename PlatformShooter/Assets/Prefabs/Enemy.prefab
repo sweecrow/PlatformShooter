@@ -94,6 +94,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthMax: 30
   healthCurrent: 0
+  powerUpPrefab: {fileID: 1613040917965276, guid: 8101887f662f32944bd7cb0d5d19d60c,
+    type: 2}
+  powerUpNumer: 0
 --- !u!212 &212922022743277026
 SpriteRenderer:
   m_ObjectHideFlags: 1
